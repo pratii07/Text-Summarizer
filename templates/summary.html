@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summary Of Text</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    body {
+        background-color: #eaeaea;
+        padding: 20px;
+    }
+
+    header {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    header h1 {
+        font-size: 3em;
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    /* Header titles */
+    .original_title, .summary_title {
+        flex: 1;
+        font-weight: bold;
+        font-size: 1.2em;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 5px;
+        color: white;
+    }
+    .original_title { background-color: #1abc9c; }
+    .summary_title { background-color: #e67e22; }
+
+    /* Text + button wrapper */
+    .text-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column; /* stack text + button vertically */
+        gap: 0; /* no gap between text and button */
+    }
+
+    .originalText, .summaryText {
+        padding: 15px;
+        border-radius: 5px;
+        white-space: pre-wrap;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .originalText { background-color: #1abc9c20; }
+    .summaryText { background-color: #e67e2220; }
+
+    .originalBtn, .summaryBtn {
+        text-align: center;
+        padding: 12px 0;
+        border-radius: 0 0 5px 5px; /* rounded bottom corners only */
+        font-weight: bold;
+        font-size: 1em;
+        margin-top: 10px; /* no extra spacing */
+    }
+
+    .originalBtn { background-color: #16a085; color: white; }
+    .summaryBtn { background-color: #d35400; color: white; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .container, .text-wrapper { flex-direction: column; }
+        .originalText, .summaryText, .originalBtn, .summaryBtn { width: 100%; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Text Summarizer</h1>
+</header>
+
+<div class="container">
+    <p class="original_title">Original Text</p>
+    <p class="summary_title">Summary</p>
+</div>
+
+<div class="container">
+    <div class="text-wrapper">
+        <p class="originalText">{{original_text}}</p>
+        <p class="originalBtn">Words: {{original_length}}</p>
+    </div>
+    <div class="text-wrapper">
+        <p class="summaryText">{{summary}}</p>
+        <p class="summaryBtn">Words: {{summary_length}}</p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarizer</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Text Summarizer</h1>
+        <p>Paste your text below and get a concise summary instantly!</p>
+    </header>
+
+    <form action="/analyze" method="post">
+        <textarea name="text" placeholder="Enter text to summarize"></textarea>
+        <button type="submit">Summarize</button>
+    </form>
+
+</body>
+</html>
